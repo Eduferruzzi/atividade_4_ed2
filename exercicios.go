@@ -49,7 +49,7 @@ func (p *Preprocessamento) Distancia(v, w int) int {
 
 func abs(valor int) int {
 	if valor < 0 {
-		return valor*(-1)
+		return valor * (-1)
 	}
 	return valor
-} 
+}
