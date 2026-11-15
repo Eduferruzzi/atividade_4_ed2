@@ -36,14 +36,15 @@ func Preprocessa(g *GrafoP) *Preprocessamento {
 			dists[v] = distPercorrida
 		}
 	}
-	
+
 	return &Preprocessamento{distExtremo: dists}
 }
 
 // Distancia devolve o comprimento do caminho mais curto entre os vértices v e
 // w. O custo deve ser O(1).
 func (p *Preprocessamento) Distancia(v, w int) int {
-	return abs(p.distExtremo[v] - p.distExtremo[w]) // Consulta por índice nos slices retornando a distância entre v e w
+	// Subtrai as distâncias até o extremo dos 2 vértices
+	return abs(p.distExtremo[v] - p.distExtremo[w])
 }
 
 func abs(valor int) int {
